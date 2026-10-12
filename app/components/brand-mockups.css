@@ -1,0 +1,38 @@
+/* Isolated branding gallery: 4:5 thumbnails, uncropped images in the lightbox. */
+.brand-mockups { margin-top: 40px; min-width: 0; }
+.brand-mockups__track { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.brand-mockups__item { margin: 0; min-width: 0; }
+.brand-mockups__image { display: block; width: 100%; padding: 0; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid #2a2a2c; border-radius: 12px; background: #171719; }
+.brand-mockups__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms ease-out; }
+.brand-mockups__item figcaption { margin-top: 12px; color: var(--muted); font-size:var(--font-small); letter-spacing: .14em; }
+.brand-mockups__dots { display: none; }
+@media (hover: hover) { .brand-mockups__image:hover img { transform: scale(1.03); } }
+@media (min-width: 900px) and (max-width: 1199px) { .brand-mockups__track { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 899px) {
+  .brand-mockups { margin-top: 28px; }
+  .brand-mockups__track { display: flex; width: calc(50% + 50vw); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; padding-block: 6px; }
+  .brand-mockups__track::-webkit-scrollbar { display: none; }
+  .brand-mockups__track::after { content: ''; flex: 0 0 15vw; }
+  .brand-mockups__item { flex: 0 0 85vw; scroll-snap-align: start; }
+  .brand-mockups__dots { display: flex; justify-content: center; margin-top: 12px; }
+  .brand-mockups__dots button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; background: transparent; }
+  .brand-mockups__dots span { width: 5px; height: 5px; border-radius: 50%; background: #77716e; }
+  .brand-mockups__dots [aria-current="true"] span { background: var(--accent); }
+}
+.brand-mockups__lightbox { width: min(1100px, calc(100vw - 24px)); max-width: none; max-height: 96dvh; padding: 0; border: 1px solid #2a2a2c; border-radius: 12px; background: #111113; color: var(--text); overflow: auto; }
+.brand-mockups__lightbox::backdrop { background: #050506ed; backdrop-filter: blur(12px); }
+.brand-mockups__viewer { position: relative; padding: 16px; }
+.brand-mockups__viewer > img { display: block; width: 100%; height: min(78dvh, 1000px); object-fit: contain; }
+.brand-mockups__viewer-bar { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 12px; }
+.brand-mockups__viewer-bar p { min-width: 150px; text-align: center; font-size:var(--font-small); letter-spacing: .1em; }
+.brand-mockups__viewer-bar p span { display: block; color: var(--muted); font-size:var(--font-small); }
+.brand-mockups__viewer button { display: grid; place-items: center; width: 36px; height: 36px; min-width: 36px; min-height: 36px; aspect-ratio: 1; padding: 0; flex-shrink: 0; border: 1px solid #ffffff25; border-radius: 50%; color: var(--accent); background: #171719d9; backdrop-filter: blur(12px); }
+.brand-mockups__viewer button:hover { border-color: var(--accent); }
+.brand-mockups__viewer svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.brand-mockups__close { position: absolute; top: 12px; right: 12px; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .brand-mockups__image img { transition: none; } }
+
+/* Podpis może się zawijać bez wypychania przycisków poza okno. */
+.brand-mockups__viewer-bar { gap: 12px; }
+.brand-mockups__viewer-bar p { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.brand-mockups__viewer-bar button { flex-shrink: 0; }

@@ -1,0 +1,55 @@
+/* Featured Whitebull card; styles are scoped to this card and its dialog. */
+.featured-project { position: relative; width: 100%; height: clamp(490px, 40vw, 580px); overflow: hidden; border: 1px solid #2a2a2c; border-radius: 12px; background: #111113; }
+.featured-project__photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.featured-project__shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgb(0 0 0 / 65%) 0%, rgb(0 0 0 / 35%) 35%, transparent 80%); }
+.featured-project__caption { position: absolute; bottom: 28px; left: 28px; right: 28px; display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; }
+.featured-project__caption > div { min-width: 0; }
+.featured-project__caption p { color: #e9b5a5; font-size:var(--font-small); line-height: 1.5; letter-spacing: .13em; margin-bottom: 10px; }
+.featured-project__caption h3 { font-size: clamp(20px, 2vw, 28px); line-height: 1.15; letter-spacing: -.035em; max-width: 250px; color: #fff; }
+.featured-project__more { flex-shrink: 0; display: inline-flex; align-items: center; gap: 14px; min-height: 44px; padding: 11px 14px; color: #f8704d; border: 1px solid #f8704d; border-radius: 7px; background: #f8704d0c; backdrop-filter: blur(12px); font-size:var(--font-small); }
+.featured-project__more:hover { background: #f8704d24; transform: translateY(-2px); }
+.featured-menu__close svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.featured-menu { width: min(1040px, calc(100vw - 48px)); max-width: none; height: 92dvh; max-height: 92dvh; padding: 0; border: 1px solid #2a2a2c; border-radius: 14px; background: #111113; color: var(--text); overflow: auto; overscroll-behavior: contain; touch-action: pan-x pan-y pinch-zoom; scrollbar-width: thin; scrollbar-color: rgb(255 255 255 / 25%) transparent; }
+.featured-menu::backdrop { background: #000d; backdrop-filter: blur(10px); }
+.featured-menu[open] { animation: featured-menu-open 250ms ease-out; }
+.featured-menu[open]::backdrop { animation: featured-menu-backdrop 250ms ease-out; }
+.featured-menu__header { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #111113ed; backdrop-filter: blur(12px); }
+.featured-menu__header p { font-size:var(--font-small); color: var(--accent); letter-spacing: .13em; margin-bottom: 5px; }
+.featured-menu__header h2 { font-size: clamp(18px, 3vw, 25px); letter-spacing: -.03em; line-height: 1.3; }
+.featured-menu__close { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; min-width: 36px; min-height: 36px; aspect-ratio: 1; padding: 0; flex-shrink: 0; border: 1px solid #f8704d70; border-radius: 50%; background: #f8704d0c; color: var(--accent); }
+.featured-menu__pages { padding: 0 24px 24px; }
+.featured-menu__pages figure { margin: 0 0 24px; }
+.featured-menu__viewport { overflow: auto; width: 100%; touch-action: pan-x pan-y pinch-zoom; scrollbar-width: thin; scrollbar-color: rgb(255 255 255 / 25%) transparent; }
+.featured-menu__page { display: block; width: 100%; height: auto; }
+.featured-menu__pages figcaption { margin-top: 8px; font-size:var(--font-small); color: var(--muted); }
+@keyframes featured-menu-open { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes featured-menu-backdrop { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 800px) {
+  .featured-project { height: auto; aspect-ratio: 4 / 5; }
+  .featured-project__photo { position: absolute; inset: 0; }
+  .featured-project__caption { left: 18px; right: 18px; bottom: 20px; gap: 12px; }
+  .featured-project__caption h3 { font-size: 21px; }
+  .featured-project__caption p { font-size:var(--font-small); letter-spacing: .08em; }
+  .featured-project__more { gap: 8px; padding: 10px; }
+  .featured-menu { width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
+  .featured-menu__header { padding: 16px; }
+  .featured-menu__pages { padding: 0 12px 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .featured-menu[open], .featured-menu[open]::backdrop { animation: none; } .featured-project__more { transition: none; } }
+
+/* Półprzezroczyste tło z rozmyciem; kontrast sprawdzony na aktualnym zdjęciu. */
+.featured-project__caption { flex-wrap: wrap; padding: 12px; border-radius: 8px; background: rgba(13, 13, 15, .55); backdrop-filter: blur(10px); }
+.featured-project__caption p { color: var(--muted); }
+.featured-project__more { color: var(--accent); border-color: var(--accent); }
+
+/* Neutralne paski galerii; bez maskowania zdjęć. Standardy pozostają dla Firefoxa. */
+@supports selector(::-webkit-scrollbar) {
+  .featured-menu, .featured-menu__viewport { scrollbar-width: auto; scrollbar-color: auto; }
+  .featured-menu::-webkit-scrollbar, .featured-menu__viewport::-webkit-scrollbar { width: 6px; height: 6px; }
+  .featured-menu::-webkit-scrollbar-track, .featured-menu__viewport::-webkit-scrollbar-track { background: transparent; }
+  .featured-menu::-webkit-scrollbar-thumb, .featured-menu__viewport::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 25%); border-radius: 999px; }
+  .featured-menu::-webkit-scrollbar-button, .featured-menu__viewport::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+  .featured-menu::-webkit-scrollbar-corner, .featured-menu__viewport::-webkit-scrollbar-corner { background: transparent; }
+}
+
+.featured-project__more { justify-content: center; text-align: center; gap: 0; }

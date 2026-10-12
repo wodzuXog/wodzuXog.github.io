@@ -1,0 +1,34 @@
+[
+  {
+    "src": "/assets/mockups/billboard.webp",
+    "srcSet": "/assets/mockups/billboard-400.webp 400w, /assets/mockups/billboard-700.webp 700w, /assets/mockups/billboard.webp 1049w",
+    "width": 1049,
+    "height": 1500,
+    "label": "BILLBOARD",
+    "alt": "Mockup billboardu z logo FK na elewacji budynku"
+  },
+  {
+    "src": "/assets/mockups/torba.webp",
+    "srcSet": "/assets/mockups/torba-400.webp 400w, /assets/mockups/torba-700.webp 700w, /assets/mockups/torba.webp 1049w",
+    "width": 1049,
+    "height": 1499,
+    "label": "TORBA",
+    "alt": "Mockup bawełnianej torby z logo FK na fotelu"
+  },
+  {
+    "src": "/assets/mockups/opakowanie.webp",
+    "srcSet": "/assets/mockups/opakowanie-400.webp 400w, /assets/mockups/opakowanie-700.webp 700w, /assets/mockups/opakowanie.webp 1122w",
+    "width": 1122,
+    "height": 1402,
+    "label": "OPAKOWANIE",
+    "alt": "Mockup pudełka z logo FK i wypiekami"
+  },
+  {
+    "src": "/assets/mockups/plakat.webp",
+    "srcSet": "/assets/mockups/plakat-400.webp 400w, /assets/mockups/plakat-700.webp 700w, /assets/mockups/plakat.webp 1122w",
+    "width": 1122,
+    "height": 1402,
+    "label": "PLAKAT",
+    "alt": "Mockup plakatu z logo FK w restauracji"
+  }
+]

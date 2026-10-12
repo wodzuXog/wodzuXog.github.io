@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://filip-grafika-portfolio.olusiaog.chatgpt.site/sitemap.xml

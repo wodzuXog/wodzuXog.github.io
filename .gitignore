@@ -1,0 +1,15 @@
+node_modules/
+.pnpm-store/
+.next/
+.next-production/
+out/
+dist/
+.sites-runtime/
+tmp/
+.env*
+
+archive/
+.openai/
+AUDIT*.md
+IMAGE-NOTES.md
+KONTYNUACJA.md

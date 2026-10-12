@@ -1,0 +1,117 @@
+/* Slidery: stałe okno; zdjęcia druku wypełniają je z centralnym kadrowaniem. */
+.project-presentation { min-width: 0; }
+.portfolio-slider__stage { position: relative; height: clamp(300px, 30vw, 460px); overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #171719; }
+.portfolio-slide { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; visibility: hidden; transition: opacity 400ms ease, visibility 0s 400ms; }
+.portfolio-slide.is-active { opacity: 1; visibility: visible; transition-delay: 0s; }
+.portfolio-slide img { width: 100%; height: 100%; min-height: 0; object-fit: contain; object-position: center; }
+.portfolio-slide__logo { display: block; width: 100%; height: 100%; min-height: 0; overflow: hidden; }
+.portfolio-slide--carmel { background: #ebebeb; padding: 25px; }
+.portfolio-slide--dark { background: radial-gradient(ellipse at center, #272629, #151517); padding: 42px; }
+.portfolio-slide--print { background: #101011; padding: 0; }
+.portfolio-slide--print img { object-fit: cover; }
+.portfolio-slide--digital { background: #141416; }
+.portfolio-slide--digital img { object-fit: cover; }
+.portfolio-slide--digital-mobile { background: #101011; }
+.portfolio-slide--digital-mobile img { object-fit: contain; }
+.portfolio-slide--digital-mobile::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, transparent 55%, #08080845 100%); }
+.portfolio-slide--digital::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, transparent 45%, #08080830 78%, #08080880 100%); }
+.portfolio-slider__stage--mixed { height: clamp(360px, 35vw, 500px); }
+.portfolio-slide--pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px; align-items: stretch; }
+.portfolio-pair__item { margin: 0; min-width: 0; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 8px; width: 100%; }
+.portfolio-pair__item img { object-fit: contain; filter: drop-shadow(0 10px 12px #0009); }
+.portfolio-pair__item figcaption { color: var(--muted); font-size:var(--font-small); text-align: center; }
+.portfolio-caption-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; }
+.portfolio-client-link { display: inline-block; color: var(--accent); font-size:var(--font-small); margin-top: 8px; text-underline-offset: 4px; }
+.portfolio-client-link:hover { text-decoration: underline; }
+.portfolio-slide--print::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, transparent 38%, #08080845 77%, #080808b0 100%); }
+.portfolio-slider__toolbar { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
+.portfolio-slider__count { color: var(--muted); font-size:var(--font-small); letter-spacing: .12em; }
+.portfolio-slider__controls { display: flex; gap: 4px; }
+.portfolio-slider__controls button { display: grid; place-items: center; width: 36px; height: 36px; min-width: 36px; min-height: 36px; aspect-ratio: 1; padding: 0; flex-shrink: 0; border: 1px solid transparent; background: transparent; border-radius: 50%; color: var(--accent); font-size: 15px; }
+.portfolio-slider__controls button:hover { background: #f8704c12; border-color: #f8704c40; }
+.portfolio-slider .project-caption { margin-top: 8px; min-height: 0; }
+.portfolio-clients { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; }
+.portfolio-clients .portfolio-client-link { margin-top: 0; }
+.portfolio-slider__toolbar { gap: 8px; }
+.portfolio-slider__toolbar .gallery-trigger { padding: 8px 12px; min-height: 40px; }
+.portfolio-slide--portrait { padding: 16px; }
+.portfolio-slide--portrait img { filter: drop-shadow(0 10px 12px #0009); }
+.gallery-trigger { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 12px; border: 1px solid #f8704c55; background: #f8704c0c; border-radius: 6px; color: var(--accent); padding: 11px 14px; font-size:var(--font-small); }
+.gallery-trigger:hover { background: #f8704c20; border-color: var(--accent); }
+.menu-gallery { width: min(1100px, calc(100vw - 48px)); max-height: 90dvh; padding: 0; border: 1px solid #ffffff24; border-radius: 16px; color: var(--text); background: #141416; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgb(255 255 255 / 25%) transparent; }
+.menu-gallery::backdrop { background: #050506de; backdrop-filter: blur(8px); }
+.menu-gallery__content { padding: 28px; }
+.menu-gallery__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.menu-gallery__header .eyebrow { margin-bottom: 10px; }
+.menu-gallery__header h2 { font-size: clamp(25px, 3.5vw, 38px); }
+.menu-gallery__close { flex-shrink: 0; border: 1px solid #f8704c66; border-radius: 50%; background: #1f1b1b; color: var(--accent); width: 36px; height: 36px; min-width: 36px; min-height: 36px; aspect-ratio: 1; padding: 0; flex-shrink: 0; position: sticky; top: 0; }
+.menu-gallery__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; margin-bottom: 28px; }
+.menu-gallery figure { margin: 0; min-width: 0; }
+.menu-gallery figure img { width: 100%; height: auto; border-radius: 4px; background: #1b1918; }
+.menu-gallery figcaption { font-size:var(--font-small); color: var(--muted); margin-top: 9px; }
+.testimonial-grid { align-items: stretch; grid-auto-rows: 1fr; }
+.quote-card { display: flex; flex-direction: column; height: 100%; min-width: 0; }
+/* Jednakowy obszar podpisu ustawia separatory na wspólnej linii. */
+.quote-card figcaption { margin-top: auto; min-height: 95px; flex-shrink: 0; }
+.client-logo { flex-shrink: 0; width: 72px; height: 72px; display: grid; place-items: center; overflow: hidden; border-radius: 6px; background: #fff; position: relative; }
+.client-logo--restaurant { width: 120px; height: 65px; background: #000; }
+.client-logo img { width: 100%; height: 100%; min-height: 0; object-fit: cover; }
+/* Kadr usuwa białe marginesy Carmel i centruje znak, bez obcinania rysunku. */
+.client-logo:not(.client-logo--restaurant) img { object-fit: contain; transform: translateY(1%) scale(1.45); }
+@media(max-width: 800px) {
+  .portfolio-slider__stage { height: 340px; }
+  .portfolio-slide--dark { padding: 30px; }
+  .portfolio-slider .project-caption { flex-wrap: wrap; min-height: 0; }
+  .project-layout { gap: 24px; }
+  .portfolio-slider__toolbar { margin-top: 6px; }
+  .portfolio-slider__stage--mixed { height: clamp(360px, 120vw, 520px); }
+  .menu-gallery { width: calc(100vw - 24px); max-height: 94dvh; }
+  .menu-gallery__content { padding: 18px; }
+  .menu-gallery__grid { grid-template-columns: 1fr; gap: 24px; }
+  .client-logo { width: 64px; height: 64px; }
+  .client-logo--restaurant { width: 104px; height: 56px; }
+  .quote-card figcaption { min-height: 87px; }
+}
+@media(max-width: 520px) {
+  .portfolio-slide--pair { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  .portfolio-caption-pair { grid-template-columns: 1fr; }
+}
+@media(prefers-reduced-motion:reduce) { .portfolio-slide { transition: none; } }
+
+.portfolio-slider__controls .portfolio-pause{background:#ffffff09;border:1px solid #ffffff25;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 #ffffff0c;color:var(--text);margin-right:5px}.portfolio-slider__controls .portfolio-pause:hover{background:#f8704c14;border-color:#f8704c66;color:var(--accent)}
+.portfolio-slide picture{display:contents}
+
+/* Matching artwork frames for the two print posters. */
+#druk .portfolio-slide--pair { container-type: size; }
+#druk .portfolio-pair__item img { width: min(100%, calc((100cqh - 34px) * .695)); height: auto; aspect-ratio: .695; object-fit: cover; justify-self: center; align-self: center; }
+.portfolio-slide--poster { padding: 16px; }
+.portfolio-slide--poster img { width: auto; max-width: 100%; height: 100%; aspect-ratio: .695; object-fit: cover; filter: drop-shadow(0 10px 12px #0009); }
+/* Generated surroundings fill any aspect ratio; original print stays unaltered. */
+.portfolio-slide--brochure { background: #e5e5e5 url('/assets/portfolio/paluszek-tlo-rozszerzone.webp') center / cover no-repeat; isolation: isolate; }
+.portfolio-slide--brochure::before { content: ''; position: absolute; inset: 0; background: #e7e7e766; backdrop-filter: blur(14px); z-index: -1; }
+.portfolio-slide--brochure img { object-fit: contain; }
+
+/* Neutralne paski galerii; bez maskowania zdjęć. Standardy pozostają dla Firefoxa. */
+@supports selector(::-webkit-scrollbar) {
+  .menu-gallery { scrollbar-width: auto; scrollbar-color: auto; }
+  .menu-gallery::-webkit-scrollbar { width: 6px; height: 6px; }
+  .menu-gallery::-webkit-scrollbar-track { background: transparent; }
+  .menu-gallery::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 25%); border-radius: 999px; }
+  .menu-gallery::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+  .menu-gallery::-webkit-scrollbar-corner { background: transparent; }
+}
+
+.portfolio-client-link { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* Kwadratowy InoBank na telefonie: pełna grafika bez kadrowania i winiety. */
+@media (max-width: 800px) {
+  #digital .portfolio-slider__stage { height: auto; aspect-ratio: 1 / 1; }
+  #digital .portfolio-slide--digital-mobile::after { content: none; }
+}
+
+/* Naprzemienny układ desktopowy; DOM i mobilna kolejność pozostają bez zmian. */
+@media (min-width: 801px) {
+  #menu .project-layout, #digital .project-layout { grid-template-columns: 1.2fr .8fr; }
+  #menu .project-copy, #digital .project-copy { grid-column: 2; grid-row: 1; }
+  #menu .project-presentation, #digital .project-presentation { grid-column: 1; grid-row: 1; }
+}
