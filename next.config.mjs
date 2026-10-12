@@ -1,2 +1,2 @@
-const nextConfig = { output: 'export', distDir: process.env.NODE_ENV === 'production' ? 'out' : '.next', devIndicators: false };
+const nextConfig = { output: 'export', trailingSlash: true, devIndicators: false };
 export default nextConfig;
