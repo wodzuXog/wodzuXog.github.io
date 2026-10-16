@@ -2,7 +2,7 @@
 
 Portfolio projektanta graficznego: identyfikacja wizualna, projekty do druku i strony internetowe. Projekt wykorzystuje Next.js, React i CSS oraz eksportuje statyczną stronę do katalogu `out/`.
 
-Strona: https://wodzuxog.github.io/
+Strona: https://filipkepka.pl/
 
 ## Uruchomienie lokalne
 
