@@ -1,7 +1,10 @@
 // Treści i ceny oferty: wspólne źródło dla przodu i szczegółów kafelków.
 export const SERVICES = [
   {
-    icon: 'logo', number: '01', title: 'Logo i branding', price: 'od 650 zł',
+    icon: 'logo',
+    number: '01',
+    title: 'Logo i branding',
+    price: 'od 650 zł',
     description: 'Tożsamość, która wyróżnia Twoją markę i buduje rozpoznawalność.',
     details: ['Projekt logo', 'Księga znaku', 'Pełna identyfikacja wizualna'],
     benefits: [
@@ -12,16 +15,20 @@ export const SERVICES = [
       'Księga znaku z zasadami użycia logo (w pakiecie rozszerzonym)',
     ],
     scopeTitle: 'Cena zależy od zakresu',
-    scope: [
-      'Samo logo: 650–1 200 zł',
-      'Logo z pełną identyfikacją wizualną: 1 500–2 500 zł',
-    ],
+    scope: ['Samo logo: 650–1 200 zł', 'Logo z pełną identyfikacją wizualną: 1 500–2 500 zł'],
     time: 'Czas realizacji: zwykle 1–3 tygodnie.',
   },
   {
-    icon: 'menu', number: '02', title: 'Projekty menu', price: 'od 500 zł',
+    icon: 'menu',
+    number: '02',
+    title: 'Projekty menu',
+    price: 'od 500 zł',
     description: 'Apetyczna forma i przemyślany układ. Dla gości i dla Twojego biznesu.',
-    details: ['Projekt karty dań i napojów', 'Czytelna hierarchia informacji', 'Pliki przygotowane do druku'],
+    details: [
+      'Projekt karty dań i napojów',
+      'Czytelna hierarchia informacji',
+      'Pliki przygotowane do druku',
+    ],
     benefits: [
       'Projekt karty dań i napojów w stylu Twojego lokalu',
       'Czytelny układ, w którym gość szybko znajdzie to, czego szuka',
@@ -36,7 +43,10 @@ export const SERVICES = [
     time: 'Czas realizacji: zwykle 1–2 tygodnie.',
   },
   {
-    icon: 'web', number: '03', title: 'Strony internetowe', price: 'od 2 000 zł',
+    icon: 'web',
+    number: '03',
+    title: 'Strony internetowe',
+    price: 'od 2 000 zł',
     description: 'Twoje miejsce w sieci. Estetyczne, intuicyjne i dopasowane do urządzeń.',
     details: ['Indywidualny projekt UX/UI', 'Responsywny układ', 'Zakres dopasowany do potrzeb'],
     benefits: [
