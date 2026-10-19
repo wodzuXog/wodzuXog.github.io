@@ -375,19 +375,6 @@ h1 > span {
   margin-top: 25px;
   max-width: 365px;
 }
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 26px 0 33px;
-}
-.tags span {
-  font-size: var(--font-small);
-  padding: 7px 12px;
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  color: #bbb8b6;
-}
 .project-caption {
   display: flex;
   align-items: flex-start;
@@ -432,13 +419,6 @@ h1 > span {
   background: radial-gradient(ellipse at 40% 50%, #4a352736, transparent 70%), #171618;
   overflow: hidden;
 }
-.portrait-placeholder > .eyebrow {
-  position: absolute;
-  top: 25px;
-  left: 28px;
-  font-size: var(--font-small);
-  color: var(--muted);
-}
 .portrait-image {
   position: absolute;
   inset: 0;
@@ -454,7 +434,6 @@ h1 > span {
   background: linear-gradient(to bottom, #171618b3, transparent 20%, transparent 55%, #171618f2);
   pointer-events: none;
 }
-.portrait-placeholder > .eyebrow,
 .portrait-caption {
   z-index: 1;
 }
@@ -989,9 +968,6 @@ h1 > span {
     font-size: var(--font-small);
     margin-bottom: 19px;
   }
-  .tags {
-    margin: 20px 0 12px;
-  }
   .text-link {
     font-size: var(--font-small);
   }
@@ -1231,14 +1207,10 @@ h1 > span {
   }
 }
 
-/* Koncepcje FK: zachowany układ galerii i osobne CTA do kontaktu. */
+/* Koncepcje FK: odstęp pod galerią po usunięciu CTA. */
 .brand-concepts {
   overflow: clip;
-}
-.brand-concepts__cta {
-  margin-top: 32px;
-  max-width: 100%;
-  gap: 20px;
+  padding-bottom: calc(var(--section-space) + 16px);
 }
 
 /* Większe podpisy mieszczą się również w wąskiej belce i kafelku autora. */

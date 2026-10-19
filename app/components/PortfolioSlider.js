@@ -143,11 +143,8 @@ export default function PortfolioSlider({ slides: sourceSlides, label }) {
           </div>
         ))}
       </div>
-      <div className="portfolio-slider__toolbar">
-        <span className="portfolio-slider__count" aria-hidden="true">
-          {index + 1} / {slides.length}
-        </span>
-        {slides.length > 1 && (
+      {slides.length > 1 && (
+        <div className="portfolio-slider__toolbar">
           <div className="portfolio-slider__controls">
             <button
               type="button"
@@ -183,8 +180,8 @@ export default function PortfolioSlider({ slides: sourceSlides, label }) {
               <Chevron direction="right" />
             </button>
           </div>
-        )}
-      </div>
+        </div>
+      )}
       <div
         className="project-caption"
         aria-live={focused || interacting ? 'polite' : 'off'}

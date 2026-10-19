@@ -24,7 +24,6 @@ const PROJECTS = [
     description:
       'Pierwsze wrażenie zostaje na długo. Tworzę spójny język wizualny, który pozwala marce mówić własnym głosem.',
     className: 'branding',
-    skills: ['Logo', 'Księga znaku', 'Identyfikacja'],
   },
   {
     id: 'menu',
@@ -39,11 +38,6 @@ const PROJECTS = [
     description:
       'Dobre menu prowadzi do dobrego wyboru. Porządkuję ofertę i nadaję jej czytelną formę.',
     className: 'print',
-    skills: [
-      'Projekt karty dań i napojów',
-      'Czytelna hierarchia informacji',
-      'Pliki przygotowane do druku',
-    ],
   },
   {
     id: 'druk',
@@ -58,7 +52,6 @@ const PROJECTS = [
     description:
       'Projekt, który trafia do rąk. Tworzę plakaty, ulotki i broszury z dbałością o układ i czytelność.',
     className: 'print',
-    skills: ['Plakaty', 'Ulotki', 'Broszury'],
   },
   {
     id: 'digital',
@@ -73,7 +66,6 @@ const PROJECTS = [
     description:
       'Grafika ma zatrzymać wzrok w kilka sekund. Łączę mocny obraz z prostym komunikatem, by oferta była zrozumiała na pierwszy rzut oka.',
     className: 'digital',
-    skills: ['Grafika promocyjna'],
   },
 ];
 
@@ -167,14 +159,6 @@ export default function Home() {
                     <p className="eyebrow">{project.tag}</p>
                     <h2>{project.title}</h2>
                     <p>{project.description}</p>
-                    <div className="tags">
-                      {project.skills.map((skill) => (
-                        <span key={skill}>{skill}</span>
-                      ))}
-                    </div>
-                    <a className="text-link" href="#kontakt">
-                      Porozmawiajmy o Twoim projekcie
-                    </a>
                   </div>
                   <div className="project-presentation">
                     <PortfolioSlider slides={PORTFOLIO_SLIDES[project.id]} label={project.name} />
@@ -228,9 +212,6 @@ export default function Home() {
               <p>Przykładowe koncepcje z identyfikacją FK — nie są realizacjami dla klientów.</p>
             </div>
             <BrandMockups />
-            <a className="button button-primary brand-concepts__cta" href="#kontakt">
-              Porozmawiajmy o Twojej marce
-            </a>
           </div>
         </section>
         {/* 04 — PROCES WSPÓŁPRACY */}
@@ -271,7 +252,6 @@ export default function Home() {
                 sizes="(max-width: 400px) max(calc(100vw - 32px), 312px), (max-width: 800px) calc(100vw - 40px), (max-width: 1100px) 408px, min(calc((100vw - 112px) * 0.3735), 538px)"
                 loading="lazy"
               />
-              <span className="eyebrow">POZNAJMY SIĘ</span>
               <div className="portrait-caption">
                 <strong>Filip Kępka</strong>
                 <span>Projektant graficzny / freelancer</span>

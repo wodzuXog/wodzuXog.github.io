@@ -135,13 +135,8 @@
 .portfolio-slider__toolbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 12px;
-}
-.portfolio-slider__count {
-  color: var(--muted);
-  font-size: var(--font-small);
-  letter-spacing: 0.12em;
 }
 .portfolio-slider__controls {
   display: flex;
@@ -334,7 +329,7 @@
     min-height: 0;
   }
   .project-layout {
-    gap: 24px;
+    gap: 32px;
   }
   .portfolio-slider__toolbar {
     margin-top: 6px;
