@@ -9,7 +9,7 @@ import { SERVICES } from './services';
 import PortfolioSlider from './components/PortfolioSlider';
 import { PORTFOLIO_SLIDES } from './portfolio';
 
-const EMAIL = 'filip.kepka2503@gmail.com';
+const EMAIL = 'kontakt@filipkepka.pl';
 const PROJECTS = [
   {
     id: 'branding',
@@ -263,16 +263,15 @@ export default function Home() {
         {/* 05 — O MNIE */}
         <section className="about section-shell section-spacing" id="o-mnie">
           <div className="about-layout" data-reveal>
-            <div
-              className="portrait-placeholder glass"
-              role="img"
-              aria-label="Monogram FK — Filip Kępka"
-            >
+            <div className="portrait-placeholder glass">
+              <ResponsiveImage
+                className="portrait-image"
+                src="/assets/filip-kepka-portret.webp"
+                alt="Filip Kępka, projektant graficzny"
+                sizes="(max-width: 400px) max(calc(100vw - 32px), 312px), (max-width: 800px) calc(100vw - 40px), (max-width: 1100px) 408px, min(calc((100vw - 112px) * 0.3735), 538px)"
+                loading="lazy"
+              />
               <span className="eyebrow">POZNAJMY SIĘ</span>
-              <span className="portrait-monogram">
-                FK<span>.</span>
-              </span>
-              <span className="portrait-label">PROJEKTOWANIE Z PERSPEKTYWĄ</span>
               <div className="portrait-caption">
                 <strong>Filip Kępka</strong>
                 <span>Projektant graficzny / freelancer</span>

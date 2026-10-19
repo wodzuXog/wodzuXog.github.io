@@ -48,7 +48,7 @@ const structured = {
       name: 'Filip Kępka',
       jobTitle: 'Projektant graficzny',
       url,
-      email: 'filip.kepka2503@gmail.com',
+      email: 'kontakt@filipkepka.pl',
       telephone: '+48726492987',
     },
     {

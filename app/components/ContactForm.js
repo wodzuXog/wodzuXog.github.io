@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-const EMAIL = 'filip.kepka2503@gmail.com';
+const EMAIL = 'kontakt@filipkepka.pl';
 export default function ContactForm() {
   const [ready, setReady] = useState(false);
   const [formStatus, setFormStatus] = useState('');
@@ -63,7 +63,7 @@ export default function ContactForm() {
       <noscript>
         <p>
           Włącz JavaScript lub napisz bezpośrednio na{' '}
-          <a href="mailto:filip.kepka2503@gmail.com">filip.kepka2503@gmail.com</a>.
+          <a href="mailto:kontakt@filipkepka.pl">kontakt@filipkepka.pl</a>.
         </p>
       </noscript>
       <p className="form-status" role="status" aria-live="polite">
