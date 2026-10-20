@@ -22,9 +22,6 @@ function Chevron({ direction }) {
 export default function PortfolioSlider({ slides: sourceSlides, label }) {
   const [mobile, setMobile] = useState(false);
   const projects = sourceSlides.flatMap((item) => item.items || [item]);
-  const clients = [
-    ...new Map(projects.filter((item) => item.url).map((item) => [item.url, item])).values(),
-  ];
   const slides = mobile
     ? projects.map((item) => ({
         ...item,
@@ -190,25 +187,26 @@ export default function PortfolioSlider({ slides: sourceSlides, label }) {
         <div className={slide.items ? 'portfolio-caption-pair' : undefined}>
           {(slide.items || [slide]).map((project) => (
             <div key={project.src}>
-              <h3>{project.title}</h3>
+              <h3>
+                {project.url ? (
+                  <a
+                    className="portfolio-title-link"
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.title}
+                    <span className="sr-only"> (otwiera się w nowej karcie)</span>
+                  </a>
+                ) : (
+                  project.title
+                )}
+              </h3>
               {project.description?.trim() && <p>{project.description}</p>}
             </div>
           ))}
         </div>
       </div>
-      <nav className="portfolio-clients" aria-label={`Strony klientów — ${label}`}>
-        {clients.map((client) => (
-          <a
-            key={client.url}
-            className="portfolio-client-link"
-            href={client.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {client.title}
-          </a>
-        ))}
-      </nav>
     </div>
   );
 }

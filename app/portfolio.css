@@ -143,14 +143,27 @@
   gap: calc(2 * var(--space-element));
   width: 100%;
 }
-.portfolio-client-link {
+.portfolio-title-link {
   display: inline-block;
-  color: var(--accent);
-  font-size: var(--font-small);
+  min-height: 44px;
+  padding-block: max(0px, calc((44px - 1lh) / 2));
+  margin-block: min(0px, calc((1lh - 44px) / 2));
+  vertical-align: top;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgb(244 241 236 / 40%);
+  text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
-.portfolio-client-link:hover {
-  text-decoration: underline;
+.portfolio-title-link:hover,
+.portfolio-title-link:focus-visible {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+.portfolio-title-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 .portfolio-slide--print::after {
   content: '';
@@ -202,13 +215,6 @@
   .portfolio-slider__toolbar + .project-caption .portfolio-caption-pair > div:last-child h3 {
     padding-right: calc(121px + var(--space-element));
   }
-}
-.portfolio-clients {
-  grid-area: 3 / 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-element) calc(2 * var(--space-element));
-  margin-top: var(--space-element);
 }
 .portfolio-slide--portrait {
   padding: 16px;
@@ -437,22 +443,38 @@
   object-fit: cover;
   filter: drop-shadow(0 10px 12px #0009);
 }
-/* Generated surroundings fill any aspect ratio; original print stays unaltered. */
+/* Pełny kadr obu rozkładówek, bez nakładania rozmytej kopii obrazu. */
 .portfolio-slide--brochure {
-  background: #e5e5e5 url('/assets/portfolio/paluszek-tlo-rozszerzone.webp') center / cover
-    no-repeat;
-  isolation: isolate;
-}
-.portfolio-slide--brochure::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: #e7e7e766;
-  backdrop-filter: blur(14px);
-  z-index: -1;
+  background: #e5e5e5;
 }
 .portfolio-slide--brochure img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center 65%;
+}
+
+.portfolio-slide--print picture,
+.portfolio-slide--celebrujmy-mobile picture,
+.portfolio-slide--brochure picture,
+.portfolio-slide--brochure-mobile picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.portfolio-slide--brochure-mobile {
+  background: #ececec;
+}
+.portfolio-slide--brochure-mobile img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.portfolio-slide--celebrujmy-mobile {
+  background: #433f3b;
+}
+.portfolio-slide--celebrujmy-mobile img {
+  object-fit: cover;
+  object-position: center 56%;
 }
 
 /* Neutralne paski galerii; bez maskowania zdjęć. Standardy pozostają dla Firefoxa. */
@@ -480,12 +502,6 @@
   .menu-gallery::-webkit-scrollbar-corner {
     background: transparent;
   }
-}
-
-.portfolio-client-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
 }
 
 /* Kwadratowy InoBank na telefonie: pełna grafika bez kadrowania i winiety. */

@@ -44,6 +44,10 @@ export const PORTFOLIO_SLIDES = {
   druk: [
     {
       src: '/assets/portfolio/celebrujmy-broszura.webp',
+      mobileSrc: '/assets/portfolio/celebrujmy-broszura-pion.webp',
+      mobileAlt:
+        'Ulotka Celebrujmy: okładka z logo i szklanką whisky oraz rozkładówka z tekstem o marce i zdjęciem kobiety z kieliszkiem',
+      mobileTheme: 'celebrujmy-mobile',
       alt: 'Złota składana broszura Celebrujmy na ciemnym tle',
       title: 'Celebrujmy',
       url: 'https://celebrujmy.pl/#',
@@ -74,12 +78,16 @@ export const PORTFOLIO_SLIDES = {
       ],
     },
     {
-      src: '/assets/portfolio/paluszek-konkurs.webp',
+      src: '/assets/portfolio/paluszek-tlo-rozszerzone.webp',
+      mobileSrc: '/assets/portfolio/paluszek-konkurs-pion.webp',
+      mobileAlt:
+        'Dwie rozkładówki broszury konkursowej Paluszek Lewiatan: zasady zbierania pieczątek, pola na pieczątki i elektroniczna waga kuchenna',
       alt: 'Broszura konkursowa sklepu Paluszek z zasadami zbierania pieczątek i nagrodą',
       title: 'Paluszek',
+      url: 'https://epaluszek.pl/',
       description: 'Broszura konkursowa dla sklepu Paluszek.',
       theme: 'brochure',
-      mobileTheme: 'brochure',
+      mobileTheme: 'brochure-mobile',
     },
   ],
   digital: [
