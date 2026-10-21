@@ -37,7 +37,6 @@ export default function PortfolioSlider({ slides: sourceSlides, label }) {
   const [inView, setInView] = useState(false);
   const [pageVisible, setPageVisible] = useState(true);
   const root = useRef(null);
-  const slide = slides[index % slides.length];
 
   useEffect(() => {
     const query = window.matchMedia('(max-width: 800px)');
@@ -184,28 +183,35 @@ export default function PortfolioSlider({ slides: sourceSlides, label }) {
         aria-live={focused || interacting ? 'polite' : 'off'}
         aria-atomic="true"
       >
-        <div className={slide.items ? 'portfolio-caption-pair' : undefined}>
-          {(slide.items || [slide]).map((project) => (
-            <div key={project.src}>
-              <h3>
-                {project.url ? (
-                  <a
-                    className="portfolio-title-link"
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {project.title}
-                    <span className="sr-only"> (otwiera się w nowej karcie)</span>
-                  </a>
-                ) : (
-                  project.title
-                )}
-              </h3>
-              {project.description?.trim() && <p>{project.description}</p>}
-            </div>
-          ))}
-        </div>
+        {slides.map((item, position) => (
+          <div
+            key={item.src}
+            className={item.items ? 'portfolio-caption-pair' : undefined}
+            aria-hidden={position !== index}
+          >
+            {(item.items || [item]).map((project) => (
+              <div key={project.src}>
+                <h3>
+                  {project.url ? (
+                    <a
+                      className="portfolio-title-link"
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      tabIndex={position === index ? undefined : -1}
+                    >
+                      {project.title}
+                      <span className="sr-only"> (otwiera się w nowej karcie)</span>
+                    </a>
+                  ) : (
+                    project.title
+                  )}
+                </h3>
+                {project.description?.trim() && <p>{project.description}</p>}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

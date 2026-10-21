@@ -206,9 +206,18 @@
   border-color: #f8704c40;
 }
 .portfolio-slider .project-caption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-area: 2 / 1;
   margin-top: var(--space-caption);
   min-height: 0;
+}
+.portfolio-slider .project-caption > div {
+  grid-area: 1 / 1;
+  align-self: start;
+}
+.portfolio-slider .project-caption > [aria-hidden='true'] {
+  visibility: hidden;
 }
 @media (min-width: 801px) {
   .portfolio-slider__toolbar + .project-caption > div:not(.portfolio-caption-pair) h3,

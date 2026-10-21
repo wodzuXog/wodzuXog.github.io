@@ -51,7 +51,7 @@ export const PORTFOLIO_SLIDES = {
       alt: 'Złota składana broszura Celebrujmy na ciemnym tle',
       title: 'Celebrujmy',
       url: 'https://celebrujmy.pl/#',
-      description: 'Projekt składanej ulotki promującej ofertę marki Celebrujmy.',
+      description: 'Projekt składanej ulotki dla Celebrujmy.',
       theme: 'print',
     },
     {
@@ -63,7 +63,7 @@ export const PORTFOLIO_SLIDES = {
           src: '/assets/portfolio/lato-muzyczne.webp',
           alt: 'Plakat Inowrocławskiego Lata Muzycznego',
           title: 'Inowrocławskie Lato Muzyczne',
-          description: 'Projekt plakatu promującego Inowrocławskie Lato Muzyczne.',
+          description: 'Projekt plakatu dla miasta Inowrocław.',
           theme: 'poster',
           url: 'https://kckino.pl/inowroclawskie-lato-muzyczne-2026/',
         },
