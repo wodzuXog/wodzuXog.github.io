@@ -119,9 +119,6 @@ export default function Home() {
         <section className="hero section-shell" id="start">
           <div className="hero-body">
             <div className="hero-copy">
-              <p className="eyebrow">
-                <span className="small-line" /> DOBRY DESIGN MA ZNACZENIE
-              </p>
               <h1>
                 Filip
                 <br />
@@ -254,7 +251,7 @@ export default function Home() {
               />
               <div className="portrait-caption">
                 <strong>Filip Kępka</strong>
-                <span>Projektant graficzny / freelancer</span>
+                <span>Projektant graficzny</span>
               </div>
             </div>
             <div className="about-copy">
@@ -276,11 +273,9 @@ export default function Home() {
               <aside className="kitchen-note">
                 <span aria-hidden="true">↳</span>
                 <div>
-                  <h3>Gastronomię znam od kuchni. Dosłownie.</h3>
+                  <h3>Wiem, jak klient czyta ofertę.</h3>
                   <p>
-                    Praca w gastronomii nauczyła mnie, jak goście czytają menu i o co pytają przy
-                    stoliku. Wykorzystuję to w projektowaniu — bo dobra karta ma pomagać w wyborze,
-                    a nie go utrudniać.
+                    Praca z ludźmi na pierwszej linii nauczyła mnie, jak klienci wybierają, o co pytają i co ich zniechęca. Wykorzystuję to w projektowaniu, bo dobry projekt ma pomagać w decyzji, a nie ją utrudniać.
                   </p>
                 </div>
               </aside>

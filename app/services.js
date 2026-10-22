@@ -35,10 +35,11 @@ export const SERVICES = [
       'Pliki gotowe do druku oraz wersja cyfrowa (np. do QR)',
       'Możliwość późniejszych aktualizacji cen i pozycji',
     ],
-    scopeTitle: 'Cena zależy od liczby stron',
+    scopeTitle: 'Cena zależy od liczby stron i zdjęć',
     scope: [
       'Menu 1–4 stron: 500–1 000 zł',
-      'Rozbudowane, wielostronicowe menu: ok. 120–150 zł za stronę',
+      'Rozbudowane menu: od ok. 120 zł za stronę',
+      'Menu ze zdjęciami potraw: ok. 200 zł za stronę',
     ],
     time: 'Czas realizacji: zwykle 1–2 tygodnie.',
   },

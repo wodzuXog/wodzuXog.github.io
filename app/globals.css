@@ -229,18 +229,6 @@ textarea:focus-visible {
   flex: 0;
   padding-block: 0 40px;
 }
-.hero-copy .eyebrow {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  font-size: var(--font-small);
-  margin-bottom: 27px;
-}
-.small-line {
-  width: 25px;
-  height: 1px;
-  background: var(--accent);
-}
 h1 {
   font-size: clamp(82px, 8.9vw, 142px);
   line-height: 0.94;
@@ -900,10 +888,6 @@ h1 > span {
     grid-template-columns: 1fr;
     gap: 42px;
     padding-top: 0;
-  }
-  .hero-copy .eyebrow {
-    font-size: var(--font-small);
-    margin-bottom: 22px;
   }
   h1 {
     font-size: clamp(88px, 17vw, 130px);
